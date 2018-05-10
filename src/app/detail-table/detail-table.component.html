@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col-md-16">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Incident Type</th>
+          <th scope="col">Occurrence Date</th>
+          <th scope="col">Title</th>
+          <th scope="col">Address</th>
+        </tr>
+      </thead>
+
+        <tr *ngFor="let feature of showfeatues  ">
+          <td>{{feature.id}}</td>
+          <td>{{feature.type}}</td>
+          <td>{{ feature.occurred_at | int2date | date }}</td>
+          <td>{{feature.title}}</td>
+          <td>{{feature.address}}</td>
+        </tr>
+
+    </table>
+  </div>
+</div>
+<nav aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item"><button class="page-link" (click)="gopage(1)">1</button></li>
+    <li class="page-item"><button class="page-link"  (click)="gopage(2)">2</button></li>
+    <li class="page-item"><button class="page-link"  (click)="gopage(3)">3</button></li>
+    <li class="page-item"><button class="page-link" (click)="gopage(4)">4</button></li>
+    <li class="page-item"><button class="page-link"  (click)="gopage(5)">5</button></li>
+  </ul>
+</nav>

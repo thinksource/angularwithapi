@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-md-12">
+  <span>
+    <label for="location" class="mycss" >Location:</label>
+    <select id="location" #location class="mycss">
+        <option value="" default></option>
+        <option value ="sydney">Sydney</option>
+        <option value ="brisbane">Brisbane</option>
+        <option value="melborune">Melbourne</option>
+      </select>
+    <label for="incident_type" class="mycss" >Type:</label>
+    <select id="incident_type" #incident_type class="mycss">
+      <option value="" default></option>
+      <option value="crash">Crash</option>
+      <option value="hazard">Hazard</option>
+      <option value="theft">Theft</option>
+      <option value="unconfirmed">Unconfirmed</option>
+    </select>
+    <input type="button" class="btn btn-primary mycss" value="Search" 
+    (click)="dosearch(incident_type.value,location.value)"/>
+  </span>
+  </div>
+</div>
