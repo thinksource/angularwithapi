@@ -22,9 +22,12 @@ export class SummaryTableComponent implements OnInit {
     this.bikeService.searchEvent.subscribe(params => {
       this.result_account = params.length;
       this.timesc = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-      for (let feature of params) { 
-        let temp: number = this.int2time(feature.occurred_at).getHours();
-        
+      for (let feature of params) {
+        let td = this.int2time(feature.occurred_at);
+        let th: number = td.getHours();
+        let tm: number = td.getMinutes();
+        let temp = tm > 30 ? th + 1 : th;
+        if (temp >= 24) temp = 0;
         this.timesc[temp] += 1;
       }
       console.log(this.timesc);
