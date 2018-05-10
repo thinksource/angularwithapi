@@ -26,9 +26,7 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
 
 ## Question 2.
@@ -45,6 +43,9 @@ In addition, please recommend the technologies you would select for this solutio
 we can put a cache inside ourselves server side. which also provide APIs.
 Just like APIs cache, store in database or redis cache, If the failure of API request of BikeWise, the httpclient will send request to ourself APIs server.
 
-Any sucessful request will also send to our cache sever to replace the APIs Cache server's old APIs result. The API cache only contain the last time result.
+Any sucessful request will also send to our cache sever to replace the APIs Cache server's old APIs result. The API cache only contain the last time result. Any other APIs result storm will replace by the last time version.
+The APIs with 2 keys the location and the incident type, the different keys item will store.
+
+
 
 
