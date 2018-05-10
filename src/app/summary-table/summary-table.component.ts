@@ -26,7 +26,7 @@ export class SummaryTableComponent implements OnInit {
         let td = this.int2time(feature.occurred_at);
         let th: number = td.getHours();
         let tm: number = td.getMinutes();
-        let temp = tm > 30 ? th + 1 : th;
+        let temp = tm >= 30 ? th + 1 : th;
         if (temp >= 24) temp = 0;
         this.timesc[temp] += 1;
       }
